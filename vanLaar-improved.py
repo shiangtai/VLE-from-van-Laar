@@ -110,16 +110,29 @@ canvas.get_tk_widget().pack()
 slider_frame = tk.Frame(root)
 slider_frame.pack()
 
+def enforce_same_sign(slider_id):
+    alpha = alpha_slider.get()
+    beta = beta_slider.get()
+    
+    # Only enforce if both are non-zero and have opposite signs
+    if alpha != 0 and beta != 0 and np.sign(alpha) != np.sign(beta):
+        if slider_id == 'a':
+            beta_slider.set(abs(beta) * np.sign(alpha))
+        elif slider_id == 'b':
+            alpha_slider.set(abs(alpha) * np.sign(beta))
+    
+    update_plot()
+
 # Create sliders for alpha and beta parameters within the slider frame
 alpha_slider = tk.Scale(slider_frame, from_=-5.0, to=5.0, resolution=0.1, orient="horizontal", label="Parameter α")
 alpha_slider.set(1.0)  # Default value
 alpha_slider.grid(row=0, column=0, padx=5, pady=5)
-alpha_slider.bind("<Motion>", update_plot)
+alpha_slider.bind("<Motion>", lambda event: enforce_same_sign('a'))
 
 beta_slider = tk.Scale(slider_frame, from_=-5.0, to=5.0, resolution=0.1, orient="horizontal", label="Parameter β")
 beta_slider.set(1.0)  # Default value
 beta_slider.grid(row=0, column=1, padx=5, pady=5)
-beta_slider.bind("<Motion>", update_plot)
+beta_slider.bind("<Motion>", lambda event: enforce_same_sign('b'))
 
 P1_slider = tk.Scale(slider_frame, from_=0.01, to=10.0, resolution=0.1, orient="horizontal", label="P₁ˢᵃᵗ")
 P1_slider.set(2.0)  # Default value
