@@ -73,6 +73,16 @@ def update_plot(*args):
     ax3.legend()
     ax3.grid(True)
     
+    # Update xy diagram
+    ax4.clear()
+    ax4.plot(x1_values, y1_values, label='y1', color='b', linewidth=2)
+    ax4.plot(x1_values, x1_values, linestyle='--', color='gray', linewidth=2)
+    ax4.set_xlabel("Mole fraction of component 1 ($x_1$)")
+    ax4.set_ylabel("Mole fraction of component 1 ($y_1$)")
+    ax4.set_title(f'$P_1^{{sat}}$={P1_sat:.2f}, $P_2^{{sat}}$={P2_sat:.2f}')
+    ax4.legend()
+    ax4.grid(True)
+
     canvas.draw()
 
 # Initialize main window
@@ -80,11 +90,17 @@ root = tk.Tk()
 root.title("Van Laar Model Parameter Visualization")
 
 # Initialize figure and axes
-fig = Figure(figsize=(15, 5), dpi=100)
-fig.suptitle("Van Laar Model Parameter Visualization")
-ax1 = fig.add_subplot(131)
-ax2 = fig.add_subplot(132)
-ax3 = fig.add_subplot(133)
+fig = Figure(figsize=(8,7), dpi=100)
+fig.suptitle("Vapor-Liquid Equilibrium using Van Laar Model", fontsize=16)
+ax1 = fig.add_subplot(221)
+ax2 = fig.add_subplot(222)
+ax3 = fig.add_subplot(223)
+ax4 = fig.add_subplot(224)
+
+# Add tight_layout to automatically adjust spacing
+# fig.tight_layout(rect=[0, 0, 1, 0.96])  # rect parameter leaves space for suptitle
+# Manually adjust spacing
+fig.subplots_adjust(left=0.1, right=0.95, top=0.93, bottom=0.08, hspace=0.35, wspace=0.3)
 
 # Embed the plot in Tkinter Canvas
 canvas = FigureCanvasTkAgg(fig, master=root)
@@ -95,12 +111,12 @@ slider_frame = tk.Frame(root)
 slider_frame.pack()
 
 # Create sliders for alpha and beta parameters within the slider frame
-alpha_slider = tk.Scale(slider_frame, from_=0.01, to=5.0, resolution=0.1, orient="horizontal", label="Parameter α")
+alpha_slider = tk.Scale(slider_frame, from_=-5.0, to=5.0, resolution=0.1, orient="horizontal", label="Parameter α")
 alpha_slider.set(1.0)  # Default value
 alpha_slider.grid(row=0, column=0, padx=5, pady=5)
 alpha_slider.bind("<Motion>", update_plot)
 
-beta_slider = tk.Scale(slider_frame, from_=0.01, to=5.0, resolution=0.1, orient="horizontal", label="Parameter β")
+beta_slider = tk.Scale(slider_frame, from_=-5.0, to=5.0, resolution=0.1, orient="horizontal", label="Parameter β")
 beta_slider.set(1.0)  # Default value
 beta_slider.grid(row=0, column=1, padx=5, pady=5)
 beta_slider.bind("<Motion>", update_plot)
