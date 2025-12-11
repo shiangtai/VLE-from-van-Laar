@@ -39,7 +39,7 @@ pip install numpy matplotlib
 
 Run the main script:
 ```bash
-python van_laar_visualization.py
+python vanLaar-improved.py
 ```
 
 ### Interactive Controls
