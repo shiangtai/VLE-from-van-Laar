@@ -14,7 +14,7 @@ An interactive Python application for visualizing the van Laar thermodynamic mod
 
 ## Screenshots
 
-![Van Laar Model Visualization]([Screenshot%202025-12-11%20154441.png]
+![Screenshot%202025-12-11%20154441.png](https://github.com/shiangtai/VLE-from-van-Laar/blob/main/Screenshot%202025-12-11%20154441.png)]
 
 ## Requirements
 ```
