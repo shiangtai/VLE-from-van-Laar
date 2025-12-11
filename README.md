@@ -1,6 +1,6 @@
 # Van Laar Model Interactive Visualization
 
-An interactive Python application for visualizing the van Laar thermodynamic model for binary liquid mixtures, including Gibbs free energy of mixing, activity coefficients, and pressure-composition (Pxy) phase diagrams.
+An interactive Python application for visualizing the van Laar thermodynamic model for binary liquid mixtures, including Gibbs free energy of mixing, activity coefficients, pressure-composition (Pxy), and composition (y-x) phase diagrams.
 
 ## Features
 
@@ -9,11 +9,12 @@ An interactive Python application for visualizing the van Laar thermodynamic mod
   - Gibbs Free Energy of Mixing (ΔG_mix)
   - Activity Coefficients (γ₁, γ₂)
   - Pressure-Composition (Pxy) Phase Diagram with bubble and dew point curves
+  - vapor-phase composition vs liquid phase composition (xy) phase diagrams
 - **Educational Tool**: Demonstrates the relationship between model parameters and phase behavior in non-ideal binary mixtures
 
 ## Screenshots
 
-![Van Laar Model Visualization](screenshot.png)
+![Van Laar Model Visualization]([Screenshot%202025-12-11%20154441.png]
 
 ## Requirements
 ```
