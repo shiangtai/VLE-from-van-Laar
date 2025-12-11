@@ -128,13 +128,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License 
 
 ## Author
 
 **Shiang-Tai**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Repository: [myPython](https://github.com/yourusername/myPython)
+- GitHub: [@shiangtai](https://github.com/shiangtai)
+- Repository: [myPython](https://github.com/shiangtai/VLE-from-van-Laar)
 
 ## Acknowledgments
 
@@ -142,14 +142,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Developed for educational purposes at National Taiwan University
 - Built with Python, NumPy, and Matplotlib
 
-## References
-
-1. Smith, J. M., Van Ness, H. C., & Abbott, M. M. (2005). *Introduction to Chemical Engineering Thermodynamics* (7th ed.). McGraw-Hill.
-2. Prausnitz, J. M., Lichtenthaler, R. N., & de Azevedo, E. G. (1999). *Molecular Thermodynamics of Fluid-Phase Equilibria* (3rd ed.). Prentice Hall.
-
 ## Contact
 
-For questions or suggestions, please open an issue on GitHub or contact [your email].
+For questions or suggestions, please open an issue on GitHub or contact [stlin@ntu.edu.tw].
 
 ---
 
